@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="IndependentProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IndependentProject"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"  Text="Email Messenger" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+        <RelativePanel Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBox x:Name="NameBox" RelativePanel.AlignHorizontalCenterWithPanel="True" MinWidth="400" PlaceholderText="Name" TextAlignment="Center" HorizontalAlignment="Stretch"/>
+            <Button Click="LoginButton_Click" x:Name="LoginButton" RelativePanel.Below="NameBox" Content="Login" HorizontalAlignment="Stretch" RelativePanel.AlignHorizontalCenterWith="NameBox" Margin="0,20,0,20"/>
+            <TextBlock x:Name="ErrorMessage" Grid.Row="1" RelativePanel.AlignHorizontalCenterWith="NameBox" RelativePanel.Below="LoginButton" Text="Username is not long enough!" Foreground="Red" Visibility="Collapsed"/>
+
+        </RelativePanel>
+
+    </Grid>
+</Page>
